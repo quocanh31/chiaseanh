@@ -1,0 +1,10 @@
+git init
+git remote add origin linkhere
+git pull origin master
+git checkout ha
+
+khi mà xong thì
+git add .
+git commit -m "your message here"
+git push origin quocanh
+php artisan serve
