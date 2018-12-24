@@ -154,10 +154,12 @@ class PagesController extends Controller
 	public function postUphinh(Request $request)
 	{
 	$this->validate($request,[
-	    		'txtCateName' => 'required',
+	    		'txtCateName' => 'required|min:3|max:50',
 	    		'NoiDung'=> 'required'
 	    	],[
 	    		'txtCateName.required' =>'Bạn chưa nhập tên',
+	    		'txtCateName.min' => 'Tên gồm tối thiểu 3 ký tự!',
+    			'txtCateName.max' => 'Tên không được vượt quá 50 ký tự!',
 	    		'NoiDung.required' => 'Bạn chưa nhập nội dung'
 	    	]);
 	    	$hinhanh=new HinhAnh;

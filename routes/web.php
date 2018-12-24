@@ -81,6 +81,12 @@ Route::get('timkiem','PagesController@timKiem');
 Route::post('comment/{id}','CommentController@postComment');
 
 Route::get('photo/{id}/{name}','UserPhotoController@getUserPhoto');
+Route::get('photo/{id}/{name}/{tlid}','UserPhotoController@getUserPhotoCate');
+Route::get('xoa/photo/{id}','UserPhotoController@xoaAnh');
+
+Route::get('sua/photo/{id}','UserPhotoController@getSua');
+Route::post('sua/photo/{id}','UserPhotoController@postSua');
+
 
 
 /*
