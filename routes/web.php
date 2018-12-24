@@ -76,6 +76,11 @@ Route::post('dangky','PagesController@postDangKy');
 Route::get('uphinh','PagesController@getUphinh');
 Route::post('uphinh','PagesController@postUphinh');
 Route::get('hinhanh/{id}/{TenKhongDau}.html','PagesController@getHinhTl');
+Route::get('hinhanh/chitiet/{id}/{TenKhongDau}.html','PagesController@getHinhCt');
+Route::get('timkiem','PagesController@timKiem');
+
+
+Route::post('comment/{id}','CommentController@postComment');
 
 
 /*

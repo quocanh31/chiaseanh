@@ -15,7 +15,7 @@
 	             <div class="col-md-9 ">
 	                <div class="panel panel-default">
 	                    <div class="panel-heading" style="background-color:#337AB7; color:white;">
-	                        <h4><b>{{$tentl->Ten}}</b></h4>
+	                        <h4><b>Ảnh của {{Auth::user()->name}}</b></h4>
 	                    </div>
 
 	                    <div class="">
@@ -24,10 +24,10 @@
 	                            	@foreach($hinhanh as $ha)
 	                                <div class="col-md-4">
 	                                    <h3 style="width: 200px;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis; font-weight: bold;">{{$ha->TieuDe}}</h3>
-	                                    <a href="detail.html" >
+	                                    <a href="hinhanh/chitiet/{{$ha->id}}/{{$ha->TieuDeKhongDau}}.html" >
 	                                    <img width="200px" height="200px" class="" src="upload/hinhanh/{{$ha->Hinh}}" alt="">
 	                                    </a>
-	                                    <a class="btn btn-primary" href="detail.html" style="margin-top: 20px">Xem thêm<span class="glyphicon glyphicon-chevron-right"></span></a>
+	                                    <a class="btn btn-primary" href="hinhanh/chitiet/{{$ha->id}}/{{$ha->TieuDeKhongDau}}.html" style="margin-top: 20px">Xem thêm <span class="glyphicon glyphicon-chevron-right"></span></a>
 	                                </div>
 	                                @endforeach
 

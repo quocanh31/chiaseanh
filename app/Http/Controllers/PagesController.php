@@ -201,4 +201,27 @@ class PagesController extends Controller
 			$hinhanh = HinhAnh::where('idTheLoai',$id)->orderBy('created_at','desc')->paginate(12);	
 			return view('pages.hatheloai',['hinhanh'=>$hinhanh,'tentl'=>$tentl]);	
 	}
+
+	public function getHinhCt($id)
+	{
+		$hinhanh= HinhAnh::find($id);
+		$hinhanh->SoLuotXem+=1;
+		if($hinhanh->SoLuotXem == 10)
+		{
+			$hinhanh->NoiBat=1;
+		}
+		$nguoidang= User::find($hinhanh->idUser);
+		$hinhanh->save();
+		$hinhNoiBat= HinhAnh::where('NoiBat',1)->take(4)->get();
+		$hinhLienQuan=HinhAnh::where('idUser',$hinhanh->idUser)->take(4)->get();
+		return view('pages.chitiet',['hinhanh'=>$hinhanh,'hinhNoiBat'=>$hinhNoiBat,'hinhLienQuan'=>$hinhLienQuan
+			,'nguoidang'=>$nguoidang]);
+	}
+
+	public function timKiem(Request $request)
+	{
+		$tukhoa= $request->tukhoa;
+		$hinhanh = HinhAnh::where('TieuDe','like','%'.$tukhoa.'%')->orWhere('NoiDung','like','%'.$tukhoa.'%')->paginate(12);
+		return view('pages.timkiem',['tukhoa'=>$tukhoa,'hinhanh'=>$hinhanh]);
+	}
 }
