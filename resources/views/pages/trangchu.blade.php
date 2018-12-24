@@ -25,7 +25,7 @@
 	                                <div class="col-md-4">
 	                                    <h3 style="width: 200px;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis; font-weight: bold;">{{$ha->TieuDe}}</h3>
 	                                    <a href="hinhanh/chitiet/{{$ha->id}}/{{$ha->TieuDeKhongDau}}.html" >
-	                                    <img style="width: 200px; height: 200px; overflow: hidden;" src="upload/hinhanh/{{$ha->Hinh}}" alt="">
+	                                    <img style="width: 200px; height: 200px; object-fit: cover;" src="upload/hinhanh/{{$ha->Hinh}}" alt="">
 	                                    </a>
 	                                    <a class="btn btn-primary" href="hinhanh/chitiet/{{$ha->id}}/{{$ha->TieuDeKhongDau}}.html" style="margin-top: 20px">Xem thêm <span class="glyphicon glyphicon-chevron-right"></span></a>
 	                                </div>
