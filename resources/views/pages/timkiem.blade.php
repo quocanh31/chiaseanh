@@ -15,7 +15,7 @@
 	             <div class="col-md-9 ">
 	                <div class="panel panel-default">
 	                    <div class="panel-heading" style="background-color:#337AB7; color:white;">
-	                        <h4><b>{{$tentl->Ten}}</b></h4>
+	                        <h4><b>Kết quả tìm kiếm cho: {{$tukhoa}}</b></h4>
 	                    </div>
 
 	                    <div class="">
@@ -42,7 +42,12 @@
 
 
 
-	               {{$hinhanh->links()}}
+			                <!-- Pagination -->
+		                <div style="text-align: center;">
+		                  {{-- {{$tintuc->links()}} --}}
+		                  {{ $hinhanh->appends(Request::all())->links() }}
+		                </div>        
+		                <!-- /.row -->
 
 	                </div>
 	            </div> 
