@@ -11,9 +11,7 @@
 |
 */
 use App\Theloai;
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@hienMenu');
 
 Route::get('admin/dangnhap','UserController@getDangnhapAdmin');
 Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
@@ -81,6 +79,8 @@ Route::get('timkiem','PagesController@timKiem');
 
 
 Route::post('comment/{id}','CommentController@postComment');
+
+Route::get('photo/{id}/{name}','UserPhotoController@getUserPhoto');
 
 
 /*

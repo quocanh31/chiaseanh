@@ -33,7 +33,7 @@
                         <a href="uphinh">Up hình</a>
                     </li>
                     <li>
-                        <a href="#">My photo</a>
+                        <a href="photo/{{Auth::user()->id}}/{{Auth::user()->name}}">My photo</a>
                     </li>                      
                     <li>
                         <a href="nguoidung"> 

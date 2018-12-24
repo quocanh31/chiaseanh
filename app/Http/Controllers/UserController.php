@@ -11,6 +11,7 @@ use App\User;
 class UserController extends Controller
 {
     //
+    
     public function getDanhSach(){
     	$user = User::all();
     	return view('admin.user.danhsach',['user' => $user]);
