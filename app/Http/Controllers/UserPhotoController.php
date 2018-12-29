@@ -10,6 +10,7 @@ use App\TheLoai;
 use App\Slide;
 use App\User;
 use App\HinhAnh;
+use App\Comment;
 
 class UserPhotoController extends Controller
 {
@@ -94,6 +95,13 @@ class UserPhotoController extends Controller
 	    	$hinhanh->save();
 	    	return back()->with('message','Sửa thành công!');
 
+    }
+
+    public function xoaCmt($id)
+    {
+    	$cmt= Comment::find($id);
+    	$cmt->delete();
+    	return back();
     }
 /*
     public function xoaAnh($id)

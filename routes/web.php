@@ -47,6 +47,12 @@ Route::group(['prefix' => 'admin','middleware' => 'adminLogin'],function(){
 		Route::get('xoa/{id}','SlideController@getXoa');
 	});	
 
+	Route::group(['prefix' => 'hinhanh'],function(){
+		Route::get('danhsach','HinhAnhController@getDanhSach');
+
+		Route::get('xoa/{id}','HinhAnhController@getXoa');
+	});	
+
 });
 
 
@@ -76,6 +82,7 @@ Route::post('uphinh','PagesController@postUphinh');
 Route::get('hinhanh/{id}/{TenKhongDau}.html','PagesController@getHinhTl');
 Route::get('hinhanh/chitiet/{id}/{TenKhongDau}.html','PagesController@getHinhCt');
 Route::get('timkiem','PagesController@timKiem');
+Route::get('noibat','PagesController@hinhNoiBat');
 
 
 Route::post('comment/{id}','CommentController@postComment');
@@ -86,6 +93,8 @@ Route::get('xoa/photo/{id}','UserPhotoController@xoaAnh');
 
 Route::get('sua/photo/{id}','UserPhotoController@getSua');
 Route::post('sua/photo/{id}','UserPhotoController@postSua');
+Route::get('xoa/cmt/{id}','UserPhotoController@xoaCmt');
+
 
 
 

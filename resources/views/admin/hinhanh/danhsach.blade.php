@@ -6,39 +6,52 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Category
-                            <small>List</small>
+                        <h1 class="page-header">HinhAnh
+                            <small>Danh Sách</small>
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
+                    @if(session('message'))
+                        <div class="alert alert-success">
+                            <strong>{{ session('message') }}</strong>
+                        </div>
+                    @endif
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr align="center">
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Category Parent</th>
-                                <th>Status</th>
+                                <th>Tiêu Đề</th>
+                                <th>Hình</th>>
+                                <th>Người đăng</th>
+                                <th>Thể Loại</th>
+                                <th>Nội Dung</th>
+                                <th>Lượt xem</th>
+                                <th>Nổi bật</th>
                                 <th>Delete</th>
-                                <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($hinhanh as $ha)
                             <tr class="odd gradeX" align="center">
-                                <td>1</td>
-                                <td>Tin Tức</td>
-                                <td>None</td>
-                                <td>Hiện</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                                <td>{{$ha->id}}</td>
+                                <td>{{$ha->TieuDe}}</td>
+                                <td>
+                                    <img width="300px" src="upload/hinhanh/{{$ha->Hinh}}">
+                                </td>
+                                <td>{{$ha->hauser->name}}</td>
+                                <td>{{$ha->theloai->Ten}}</td>
+                                <td>{{$ha->NoiDung}}</td>
+                                <td>{{$ha->SoLuotXem}}</td>
+                                <td>
+                                @if($ha->NoiBat==0)
+                                {{'Không'}}
+                                @else
+                                {{'Có'}}
+                                @endif    
+                                </td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/hinhanh/xoa/{{$ha->id}}"> Delete</a></td>
                             </tr>
-                            <tr class="even gradeC" align="center">
-                                <td>2</td>
-                                <td>Bóng Đá</td>
-                                <td>Thể Thao</td>
-                                <td>Ẩn</td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

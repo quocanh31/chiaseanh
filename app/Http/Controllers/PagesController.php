@@ -204,6 +204,12 @@ class PagesController extends Controller
 			return view('pages.hatheloai',['hinhanh'=>$hinhanh,'tentl'=>$tentl]);	
 	}
 
+	public function hinhNoiBat()
+	{
+		$hinhanh = HinhAnh::where('NoiBat',1)->paginate(12);
+		return view('pages.trangchu',['hinhanh'=>$hinhanh]);
+	}
+
 	public function getHinhCt($id)
 	{
 		$hinhanh= HinhAnh::find($id);
