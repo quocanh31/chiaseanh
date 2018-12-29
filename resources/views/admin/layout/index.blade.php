@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
     <meta name="description" content="Laravel Framework 5.x">
+=======
+
+    <meta name="description" content="Laravel Framework">
+
+>>>>>>> f0d591891c789b9ad9c86e0bcc9df241a011df21
     <meta name="author" content="">
     <title>Admin </title>
 
