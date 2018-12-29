@@ -119,12 +119,12 @@
                         @foreach($hinhLienQuan as $lq)
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
-                                <a href="detail.html">
+                                <a href="hinhanh/chitiet/{{$lq->id}}/{{$lq->TieuDeKhongDau}}.html">
                                     <img class="img-responsive" src="upload/hinhanh/{{$lq->Hinh}}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-7">
-                                <a href="#"><b>{{$lq->TieuDe}}</b></a>
+                                <a href="hinhanh/chitiet/{{$lq->id}}/{{$lq->TieuDeKhongDau}}.html"><b>{{$lq->TieuDe}}</b></a>
                             </div>
                             <p></p>
                             <div class="break"></div>
@@ -143,12 +143,12 @@
                         @foreach($hinhNoiBat as $nb)
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
-                                <a href="detail.html">
+                                <a href="hinhanh/chitiet/{{$nb->id}}/{{$nb->TieuDeKhongDau}}.html">
                                     <img class="img-responsive" src="upload/hinhanh/{{$nb->Hinh}}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-7">
-                                <a href="#"><b>{{$nb->TieuDe}}</b></a>
+                                <a href="hinhanh/chitiet/{{$nb->id}}/{{$nb->TieuDeKhongDau}}.html"><b>{{$nb->TieuDe}}</b></a>
                             </div>
                             <p></p>
                             <div class="break"></div>
