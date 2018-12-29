@@ -9,9 +9,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+<<<<<<< HEAD
+                <a class="navbar-brand" href="admin/theloai/danhsach">Admin Console</a>
+=======
 
                 <a class="navbar-brand" href="admin/theloai/danhsach">Admin Console</a>
 
+>>>>>>> f0d591891c789b9ad9c86e0bcc9df241a011df21
             </div>
             <!-- /.navbar-header -->
 
