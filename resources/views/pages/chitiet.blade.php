@@ -92,6 +92,11 @@
                     <div class="media-body">
                         <h4 class="media-heading">{{$cmt->user->name}}
                             <small>{{$cmt->created_at}}</small>
+                            @if(Auth::check())
+                            @if($cmt->user->name == Auth::user()->name)
+                            <small><a href="xoa/cmt/{{$cmt->id}}"><span class='glyphicon glyphicon-trash'></span></a></small>
+                            @endif
+                            @endif
                         </h4>
                         {{$cmt->NoiDung}}
                     </div>
